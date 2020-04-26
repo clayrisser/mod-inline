@@ -1,6 +1,6 @@
 {
   "name": "mod-inline",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "easily modify strings inline with regular expressions",
   "keywords": [
     "mod-inline",
@@ -35,7 +35,7 @@
     "url": "https://github.com/codejamninja/mod-inline"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d lib && cp src/index.d.ts lib/index.d.ts",
     "clean": "rimraf lib",
     "lint": "npm run format && eslint ./",
     "lint:fix": "npm run format && eslint --fix ./",
@@ -44,23 +44,29 @@
     "start": "babel-node src"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
-    "babel-preset-everything": "^0.1.2",
-    "eslint": "^5.5.0",
-    "eslint-config-jam": "^0.1.2",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "rimraf": "^2.6.2"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-everything": "^0.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-jam": "^0.2.20",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "rimraf": "^3.0.2"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "eslintIgnore": [
     "lib"
-  ]
+  ],
+  "dependencies": {
+    "core-js": "^3.6.5"
+  }
 }
